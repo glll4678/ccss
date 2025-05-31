@@ -1,13 +1,10 @@
 dev:
-	docker compose -f docker-compose-dev.yml up --build
+	docker compose -f docker-compose.dev.yml up --build
 
 deploy:
 	docker compose up --build -d
 
-dev-down:
-	docker compose -f docker-compose-dev.yml down -v
-
-deploy-down:
+down:
 	docker compose down -v
 
-.PHONY: dev deploy dev-down deploy-down
+.PHONY: dev deploy down
