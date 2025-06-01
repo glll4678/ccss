@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const query = ref('甜甜圈');
+const query = ref('麵包');
 const errorMessage = ref('');
 const results = ref<{ hak_hon: string; hak_pin_a: string; hak_pin_b: string; source: string; votes: number }[]>([]);
 const voted = ref<boolean[]>([]);
@@ -9,25 +9,25 @@ const voted = ref<boolean[]>([]);
 const handleSearch = async () => {
   errorMessage.value = '';
   try {
-    if (query.value !== '甜甜圈') {
+    if (query.value !== '麵包') {
       throw new Error('模擬錯誤');
     }
     const data = [
-      { hak_hon: '甜圈麭', hak_pin_a: 'tiamˇ kianˊ pangˋ', hak_pin_b: 'tiam kienˋ pangˋ', source: 'A先生', votes: 0 },
-      { hak_hon: '烰箍仔', hak_pin_a: 'poˇ kieuˊ eˋ', hak_pin_b: 'po kieuˋ eˊ', source: 'B先生', votes: 0 },
-      { hak_hon: '手鈪粄', hak_pin_a: 'suˋ agˋ banˋ', hak_pin_b: 'shiuˊ ag banˊ', source: 'C先生', votes: 0 },
+      { hak_hon: '麵包', hak_pin_a: 'mien bauˊ', hak_pin_b: 'mien⁺ bauˋ', source: '教育部《臺灣客語辭典》', votes: 0 },
+      { hak_hon: '胖', hak_pin_a: 'pangˋ', hak_pin_b: 'pangˋ', source: '行政院客家委員會《客語外來語》', votes: 0 },
+      { hak_hon: '麥粉粄', hak_pin_a: 'mag funˋ banˊ', hak_pin_b: 'magˋ funˊ banˋ', source: '阿彥', votes: 0 },
     ];
     results.value = data;
     voted.value = new Array(data.length).fill(false);
   } catch (error) {
-    errorMessage.value = '搜尋失敗！';
+    errorMessage.value = '：）';
     results.value = [];
     console.error('搜尋失敗:', error);
   }
 };
 
 const handleSubmit = () => {
-  alert('已送出！');
+  alert('：）');
 };
 
 const vote = (index: number, delta: number) => {
@@ -56,7 +56,7 @@ onMounted(() => handleSearch());
       </div>
       <p>
         網站吂完成，這下單淨係 Demo 定。<br>
-        歡迎追蹤<a href="/" rel="noopener">「詞詞字字」面書專頁</a>。
+        歡迎追蹤<a href="//www.facebook.com/bpmfv.xyz" rel="noopener" target="_blank">「詞詞字字」面書專頁</a>。
       </p>
       <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
     </main>
@@ -91,7 +91,7 @@ onMounted(() => handleSearch());
     </div>
     <footer class="footer">
       <div>
-        © 2025 詞詞字字
+        © 2025 詞詞字字 Cii-cii Sii-sii
       </div>
     </footer>
   </div>
