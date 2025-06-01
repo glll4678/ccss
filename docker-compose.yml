@@ -21,8 +21,6 @@ services:
     working_dir: /app
     depends_on:
       - db
-    environment:
-      - DEBUG=False
 
   db:
     container_name: ccss-db
