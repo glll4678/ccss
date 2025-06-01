@@ -20,7 +20,7 @@ pip3 install -r requirements.txt  # 安裝相依套件
 echo "SECRET_KEY=\"$(openssl rand -base64 24)\"" > .env  # 亂數生成 Django 金鑰
 echo "DB_PASSWORD=\"$(openssl rand -base64 24)\"" >> .env  # 隨機生成資料庫密碼
 echo "ALLOWED_HOSTS=\"localhost\"" >> .env   # 視情況增加允許登入後端API的網址
-ln -s .env ../.env  # 建立參照（Docker Compose 用）
+ln -s backend/.env ../.env  # 建立參照（Docker Compose 用）
 ```
 
 #### 日常開發
