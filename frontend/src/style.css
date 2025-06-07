@@ -39,8 +39,8 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 3rem;
+  line-height: 1.2;
 }
 
 button {
@@ -63,7 +63,11 @@ button:focus-visible {
 }
 
 .card {
-  padding: 2em;
+  border: 1px solid #ccc;
+  padding: 1.5rem;
+  width: 250px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 8px;
 }
 
 #app {
@@ -83,6 +87,12 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+  .card {
+    background-color: #d0ebf9;
+  }
+  .card:last-child {
+    background-color: #b9ddee;
   }
 }
 
@@ -141,24 +151,15 @@ h1, h2 {
   margin-top: 2rem;
 }
 
-.card {
-  background-color: white;
-  border: 1px solid #ccc;
-  padding: 1.5rem;
-  width: 250px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  border-radius: 8px;
-}
-
-.card:last-child {
-  background-color: #fff9db;
-}
-
 .card h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.5rem;
+  margin: 0 0 1rem;
+  font-size: 1.8rem;
 }
 
+.card h4 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+}
 .card p {
   margin: 0;
 }
@@ -230,6 +231,10 @@ h1, h2 {
   color: #666;
   margin: 2rem;
 }
+.footer-content {
+  text-align: left;
+  display: inline-block;
+}
 
 .error-message {
   color: red;
@@ -268,4 +273,47 @@ h1, h2 {
 
 .footer-link:hover {
   text-decoration: underline;
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+  .card {
+    background-color: #d0ebf9;
+  }
+  .card:last-child {
+    background-color: #b9ddee;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #0a121f;
+  }
+  .card {
+    background-color: #223344;
+    border: 1px solid #333;
+  }
+  .card:last-child {
+    background-color: #334455;
+  }
+  .footer {
+    color: #aaa;
+  }
+  .contributor {
+    color: #bbb;
+  }
+  .footer-link {
+    color: #4db8ff;
+    text-decoration: none;
+  }
 }
